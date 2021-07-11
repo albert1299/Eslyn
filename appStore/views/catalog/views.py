@@ -4,14 +4,12 @@ from django.http import JsonResponse
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
 
-from appStore.models import Product
+from appStore.models import Catalog
 
-class ProductListView(ListView):
-    model = Product
-    template_name = 'product/list.html'
+class CatalogListView(ListView):
+    model = Catalog
+    template_name = 'catalog/list.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Listado de productos'
-        context['object_list'] = Product.objects.filter(catalog=2)
         return context

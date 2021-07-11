@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,11 +80,11 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mysql_cymysql',
-        'NAME': 'db_store',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'NAME': config("NAME_BD"),
+        'USER': config("USER_BD"),
+        'PASSWORD': config("PASSWORD_BD"),
+        'HOST': config("HOST_BD"),
+        'PORT': config("PORT_BD"),
     }
 }
 
@@ -129,3 +131,10 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Path where media is stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# Base url to serve media files
+MEDIA_URL = '/media/'
+

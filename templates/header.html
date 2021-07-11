@@ -6,7 +6,7 @@
             <img src="{% static 'img/logo.png' %}" alt="AdminLTE Logo"
                  class="brand-image"
                  style="opacity: .8">
-            <span class="brand-text font-weight-light">Store</span>
+            <span class="brand-text font-weight-light">Eslyn</span>
         </a>
         <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,17 +15,16 @@
         <div class="collapse navbar-collapse order-3" id="navbarCollapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                    <a href="{% url 'catalogs' %}" class="nav-link"><i class="fas fa-home"></i> Inicio</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                       class="nav-link dropdown-toggle"><i class="fas fa-folder-open"></i>Menú</a>
-                    <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                        <li><a href="#" class="dropdown-item"><i class="fas fa-truck-loading"></i> Categorías</a></li>
-                        <li><a href="#" class="dropdown-item"><i class="fas fa-boxes"></i> Productos</a></li>
-                        <li><a href="#" class="dropdown-item"><i class="fas fa-users"></i> Clientes</a></li>
-                        <li><a href="#" class="dropdown-item"><i class="fas fa-shopping-cart"></i> Ventas</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="fas fa-truck-loading"></i> Catálogos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="fas fa-shopping-cart"></i> Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="fas fa-envelope-open-text"></i> Contáctenos</a>
                 </li>
             </ul>
         </div>
