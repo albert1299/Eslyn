@@ -21,10 +21,11 @@
             <td>{{ product.stock }}</td>
             <td>{{ product.description }}</td>
             <td>{{ product.category }}</td>
+            <!--<td>{{ product.image }}</td> -->
             <td>
-                <button type="button" class="btn btn-warning btn-xs btn-flat">
+                <a href="{% url 'product_update' product.id %}" type="button" class="btn btn-warning btn-xs btn-flat">
                     <i class="fas fa-edit"></i>
-                </button>
+                </a>
                 <button type="button" class="btn btn-danger btn-xs btn-flat">
                     <i class="fas fa-trash-alt"></i>
                 </button>

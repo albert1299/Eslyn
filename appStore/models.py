@@ -18,7 +18,7 @@ class Catalog(models.Model):
         return self.name
 
 class Product(models.Model):
-    name = models.CharField(max_length=150, verbose_name='Nombre')
+    name = models.CharField(max_length=60, verbose_name='Nombre')
     price = models.DecimalField(default=0.00, max_digits=9, decimal_places=2, verbose_name='Precio')
     stock = models.IntegerField(verbose_name='Stock')
     description = models.CharField(max_length=300, verbose_name='Descripción', null=True, blank=True)

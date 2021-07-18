@@ -18,9 +18,10 @@ class ProductForm(ModelForm):
                     'placeholder': 'Ingrese el nombre',
                 }
             ),
-            'price': TextInput(
+            'price': NumberInput(
                 attrs={
                     'placeholder': 'Ingrese el precio',
+                    'min': 1
                 }
             ),
             'stock': TextInput(
