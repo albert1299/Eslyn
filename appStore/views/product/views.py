@@ -41,3 +41,15 @@ class ProductUpdateView(UpdateView):
         context['title'] = 'Editar producto'
         context['update_url'] = reverse_lazy('product_update')
         return context
+
+class CatalogProductstListView(ListView):
+    model = Product
+    template_name = 'product/catalog_list.html'
+    success_url = reverse_lazy('catalog_products')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Listado de productos del catálogo'
+        context['object_list'] = Product.objects.filter(catalog=self.kwargs['pk'])
+        context['create_url'] = reverse_lazy('product_create')
+        return context
