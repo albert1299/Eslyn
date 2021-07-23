@@ -1,4 +1,199 @@
 {% extends 'body.html' %}
 {% block content %}
-<h1>Aqui va galeria de catalogos</h1>
+{% load static %}
+    <head>
+  <title>Eslyn</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" >
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}">
+  <link rel="stylesheet" href="{% static 'css/jquery-ui.css'%}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/lightgallery.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+  <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css'%}">
+  <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
+  <link rel="stylesheet" href=" {% static 'css/aos.css' %}">
+  <link rel="stylesheet" href=" {% static 'css/style.css' %}">
+        <link rel="stylesheet" href=" {% static 'css/carouselss.css' %}"  id="bootstrap-css">
+
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+<!------ Include the above in your HEAD tag ---------->
+</head>
+<body>
+
+<div class="container">
+            <div class="row blog">
+                <div class="col-md-12">
+                    <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+                        <div>
+                        <ol class="carousel-indicators">
+                            <li data-target="#blogCarousel" data-slide-to="0" class="active">1</li>
+                            <li data-target="#blogCarousel" data-slide-to="1">2</li>
+                        </ol>
+                        </div>
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                       <div class="image-wrap-2">
+                                        <div class="image-info">
+                                          <h2 class="mb-3">Catálogo 1</h2>
+                                          <a href="{% static 'single.html'%}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
+                                        </div>
+                                        <img src="{% static 'images/i_1.jpg' %}" alt="Image" class="img-fluid">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="image-wrap-2">
+                                           <div class="image-info">
+                                              <h2 class="mb-3">Catálogo 2</h2>
+                                              <a href="{% static 'single.html' %}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
+                                           </div>
+                                           <img src=" {% static 'images/i_2.jpg' %}" alt="Image" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="image-wrap-2">
+                                           <div class="image-info">
+                                              <h2 class="mb-3">Catálogo 3</h2>
+                                              <a href="{% static 'single.html' %}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
+                                           </div>
+                                           <img src=" {% static 'images/i_8.jpg' %}" alt="Image" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                       <div class="image-wrap-2">
+                                            <div class="image-info">
+                                              <h2 class="mb-3">Catálogo 4</h2>
+                                              <a href="{% static 'single.htm'%}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
+                                            </div>
+                                            <img src="{% static 'images/i_2.jpg' %}" alt="Image" class="img-fluid">
+                                       </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="image-wrap-2">
+                                            <div class="image-info">
+                                              <h2 class="mb-3">Catálogo 5</h2>
+                                              <a href="{% static 'single.html' %}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
+                                            </div>
+                                            <img src="{% static 'images/i_6.jpg' %}" alt="Image" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="image-wrap-2">
+                                            <div class="image-info">
+                                              <h2 class="mb-3">Catálogo 6</h2>
+                                              <a href="{% static 'single.html' %}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
+                                            </div>
+                                            <img src="{% static 'images/i_6.jpg' %}" alt="Image" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--.row-->
+                            </div>
+                            <!--.item-->
+
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                       <div class="image-wrap-2">
+                                            <div class="image-info">
+                                              <h2 class="mb-3">Catálogo 7</h2>
+                                              <a href="{% static 'single.html' %}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
+                                            </div>
+                                            <img src="{% static 'images/i_7.jpg' %}" alt="Image" class="img-fluid">
+                                       </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="image-wrap-2">
+                                            <div class="image-info">
+                                              <h2 class="mb-3">Catálogo 8</h2>
+                                              <a href="{% static 'single.html'%}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
+                                            </div>
+                                            <img src="{% static 'images/i_8.jpg'%}" alt="Image" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="image-wrap-2">
+                                            <div class="image-info">
+                                              <h2 class="mb-3">Catálogo 9</h2>
+                                              <a href="{% static 'single.html'%}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
+                                            </div>
+                                            <img src="{% static 'images/i_9.jpg'%}" alt="Image" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div><div class="row">
+                                    <div class="col-md-4">
+                                        <div class="image-wrap-2">
+                                            <div class="image-info">
+                                              <h2 class="mb-3">Catálogo 10</h2>
+                                              <a href="{% static 'single.html'%}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
+                                            </div>
+                                            <img src="{% static 'images/i_1.jpg'%}" alt="Image" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="image-wrap-2">
+                                            <div class="image-info">
+                                              <h2 class="mb-3">Catálogo 11</h2>
+                                              <a href="{% static 'single.html'%}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
+                                            </div>
+                                            <img src="{% static 'images/i_2.jpg'%}" alt="Image" class="img-fluid">
+                                        </div>
+                                    </div>
+                                <div class="col-md-4">
+                                        <div class="image-wrap-2">
+                                            <div class="image-info">
+                                              <h2 class="mb-3">Catálogo 12</h2>
+                                              <a href="{% static 'single.html'%}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
+                                            </div>
+                                            <img src="{% static 'images/i_3.jpg'%}" alt="Image" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--.row-->
+                            </div>
+                            <!--.item-->
+                        </div>
+                        <!--.carousel-inner-->
+                    </div>
+                    <!--.Carousel-->
+                </div>
+            </div>
+
+</div>
+
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js'%}"></script>
+  <script src="{% static 'js/jquery-ui.js'%}"></script>
+  <script src="{% static 'js/popper.min.js'%}"></script>
+  <script src="{% static 'js/bootstrap.min.js'%}"></script>
+  <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js'%}"></script>
+  <script src="{% static 'js/jquery.countdown.min.js'%}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.min.js'%}"></script>
+  <script src="{% static 'js/swiper.min.js'%}"></script>
+  <script src="{% static 'js/aos.js'%}"></script>
+ <script src="{% static 'js/carousel.js'%}"></script>
+
+  <script src="{% static 'js/picturefill.min.js'%}"></script>
+  <script src="{% static 'js/lightgallery-all.min.js'%}"></script>
+  <script src="{% static 'js/jquery.mousewheel.min.js'%}"></script>
+
+  <script src="{% static 'js/main.js'%}"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('#lightgallery').lightGallery();
+    });
+  </script>
+</body>
 {% endblock %}
