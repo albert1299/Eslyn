@@ -1,0 +1,15 @@
+.blog .carousel-indicators {
+	left: 0;
+	top: auto;
+    bottom: -10px;
+}
+/* The colour of the indicators */
+.blog .carousel-indicators li {
+    background: #0EABBAFF;
+    border-radius: 30%;
+    width: 8px;
+    height: 8px;
+}
+.blog .carousel-indicators .active {
+background: #000000;
+}

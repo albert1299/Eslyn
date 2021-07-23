@@ -25,7 +25,7 @@ class Product(models.Model):
     description = models.CharField(max_length=300, verbose_name='Descripción', null=True, blank=True)
     image = models.ImageField(upload_to='images/productos/')
     catalog = models.ForeignKey(Catalog, on_delete=models.CASCADE)
-
+   # category = models.CharField(max_length=150, verbose_name='Categoria')
     def __str__(self):
         return self.name
 
