@@ -1,0 +1,47 @@
+{% extends 'home.html' %}
+{% block body %}
+<body class="hold-transition login-page">
+    {% block content %}
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="/"><b>ESLYN</b>Store</a>
+        </div>
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Sign in to start your session</p>
+                <form action="." method="post">
+                    {% csrf_token %}
+                    <div class="input-group mb-3">
+                        {{ form.username }}
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        {{ form.password }}
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-sign-in-alt"></i> Iniciar sesión
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <a href="{% url 'createUser' %}" class="nav-link"><i class="fas fa-sign-out-alt"></i> Registrate</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+{% endblock %}

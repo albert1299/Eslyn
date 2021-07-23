@@ -111,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-ec'
 
 TIME_ZONE = 'UTC'
 
@@ -142,3 +142,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # Base url to serve media files
 MEDIA_URL = '/media/'
 
+
+LOGIN_REDIRECT_URL = '../store/'
