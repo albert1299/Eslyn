@@ -2,6 +2,7 @@ from django.urls import path
 from appStore.views.product.views import *
 from appStore.views.catalog.views import *
 from appStore.views.user.views import *
+from appStore.views.conctactos.views import *
 
 
 urlpatterns = [
@@ -12,4 +13,5 @@ urlpatterns = [
     path('catalog/<int:pk>/products/', CatalogProductstListView.as_view(), name='catalog_products'),
     path('createUser/', UsuarioCreateView.as_view(), name= "createUser"),
     path('createDataUser/<int:pk>/', DataUserCreateView.as_view(), name= "createDataUser"),
+    path('contact/', contact, name='contact')
 ]
