@@ -66,3 +66,7 @@ class CatalogProductstListView(ListView):
         context['object_list'] = Product.objects.filter(catalog=self.kwargs['pk'])
         context['create_url'] = reverse_lazy('product_create')
         return context
+
+def product(request, pk):
+    product = Product.objects.get(pk=pk)
+    return render(request, 'product/view_product.html', {'title': 'Producto seleccionado', 'product': product})
