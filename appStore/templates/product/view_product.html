@@ -1,0 +1,43 @@
+{% extends 'body.html' %}
+
+{%block content %}
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">
+            {{title}}</h5>
+
+    </div>
+    <div class="modal-body">
+        <tr>
+            <td>
+                <img src="/media/{{product.image}}" class="rounded efecto-espejo float-left img-fluid mr-5" width="600" height="400"
+                    alt="Responsive image">
+            </td>
+
+            <td>
+                <div class="text-right mr-3 font-italic">Nombre de Producto:</div>
+                <h2 class="text-right mr-3 mb-5 font-weight-bold">{{product.name}}</h2>
+                <span class="font-italic">Descripción:</span>
+                <p class="text-justify">
+                    {{product.description}}</p>
+                <div class="text-right mr-3 font-italic">Categoria:</div>
+                <h5 class="text-right mr-3">
+                    {{product.category}}</h5>
+                <div class="font-italic text-right mr-3">Precio:</div>
+                <h3 class="text-right mr-3">{{product.price}}</h3>
+            </td>
+        </tr>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary">Agregar al carrito</button>
+    <button type="button" onClick="javascript:history.go(-1);" class="btn btn-secondary"
+        data-dismiss="modal">Regresar</button>
+</div>
+</div>
+<style>
+    .efecto-espejo {
+        -webkit-box-reflect: below -260px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(255, 255, 255, 0.5)));
+    }
+</style>
+{%endblock %}

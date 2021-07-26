@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.http import JsonResponse
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
@@ -42,6 +42,19 @@ class ProductUpdateView(UpdateView):
         context['update_url'] = reverse_lazy('product_update')
         return context
 
+class ProductDeleteView(DeleteView):
+    model = Product
+    # form_class = ProductForm
+    template_name = 'product/delete.html'
+    success_url = reverse_lazy('product_list')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Eliminar Producto'
+        # context['entity'] = 'Producto'
+        context['delete_url'] = 'product_delete'
+        return context
+
 class CatalogProductstListView(ListView):
     model = Product
     template_name = 'product/catalog_list.html'
@@ -53,3 +66,7 @@ class CatalogProductstListView(ListView):
         context['object_list'] = Product.objects.filter(catalog=self.kwargs['pk'])
         context['create_url'] = reverse_lazy('product_create')
         return context
+
+def product(request, pk):
+    product = Product.objects.get(pk=pk)
+    return render(request, 'product/view_product.html', {'title': 'Producto seleccionado', 'product': product})
