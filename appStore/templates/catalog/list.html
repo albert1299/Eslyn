@@ -38,125 +38,49 @@
                         <!-- Carousel items -->
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                       <div class="image-wrap-2">
-                                        <div class="image-info">
-                                          <h2 class="mb-3">Catálogo 1</h2>
-                                          <a href="{% static 'single.html'%}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
-                                        </div>
-                                        <img src="{% static 'images/i_1.jpg' %}" alt="Image" class="img-fluid">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="image-wrap-2">
-                                           <div class="image-info">
-                                              <h2 class="mb-3">Catálogo 2</h2>
-                                              <a href="{% static 'single.html' %}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
-                                           </div>
-                                           <img src=" {% static 'images/i_2.jpg' %}" alt="Image" class="img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="image-wrap-2">
-                                           <div class="image-info">
-                                              <h2 class="mb-3">Catálogo 3</h2>
-                                              <a href="{% static 'single.html' %}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
-                                           </div>
-                                           <img src=" {% static 'images/i_8.jpg' %}" alt="Image" class="img-fluid">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                       <div class="image-wrap-2">
-                                            <div class="image-info">
-                                              <h2 class="mb-3">Catálogo 4</h2>
-                                              <a href="{% static 'single.htm'%}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
-                                            </div>
-                                            <img src="{% static 'images/i_2.jpg' %}" alt="Image" class="img-fluid">
-                                       </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="image-wrap-2">
-                                            <div class="image-info">
-                                              <h2 class="mb-3">Catálogo 5</h2>
-                                              <a href="{% static 'single.html' %}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
-                                            </div>
-                                            <img src="{% static 'images/i_6.jpg' %}" alt="Image" class="img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="image-wrap-2">
-                                            <div class="image-info">
-                                              <h2 class="mb-3">Catálogo 6</h2>
-                                              <a href="{% static 'single.html' %}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
-                                            </div>
-                                            <img src="{% static 'images/i_6.jpg' %}" alt="Image" class="img-fluid">
-                                        </div>
-                                    </div>
-                                </div>
+                                 <div class="row">
+                                        {% for catalog in object_list %}
+                                            {% if catalog.id < 7 %}
+                                                <div class="col-lg-4">
+                                                   <div class="image-wrap-2">
+                                                       <div class="image-info">
+                                                              <h2 class="mb-3">Catálogo {{ catalog.id}}</h2>
+                                                               <a class="btn btn-outline-white py-2 px-4"
+                                                                  {% if user.is_authenticated %}
+                                                                  href="{% url 'catalog_products' pk=catalog.id %}"
+                                                                  {% else %}
+                                                                   href="{% url 'login' %}"
+                                                                  {% endif %} >Ver Productos  </a>
+                                                       </div>
+                                                       <img src="/media/{{ catalog.image}}" alt="Image" class="img-fluid">
+                                                   </div>
+                                                </div>
+                                             {% endif %}
+                                        {% endfor %}
+                                 </div>
                                 <!--.row-->
                             </div>
                             <!--.item-->
-
-                            <div class="carousel-item">
+                            <div class="carousel-item ">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                       <div class="image-wrap-2">
-                                            <div class="image-info">
-                                              <h2 class="mb-3">Catálogo 7</h2>
-                                              <a href="{% static 'single.html' %}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
-                                            </div>
-                                            <img src="{% static 'images/i_7.jpg' %}" alt="Image" class="img-fluid">
-                                       </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="image-wrap-2">
-                                            <div class="image-info">
-                                              <h2 class="mb-3">Catálogo 8</h2>
-                                              <a href="{% static 'single.html'%}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
-                                            </div>
-                                            <img src="{% static 'images/i_8.jpg'%}" alt="Image" class="img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="image-wrap-2">
-                                            <div class="image-info">
-                                              <h2 class="mb-3">Catálogo 9</h2>
-                                              <a href="{% static 'single.html'%}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
-                                            </div>
-                                            <img src="{% static 'images/i_9.jpg'%}" alt="Image" class="img-fluid">
-                                        </div>
-                                    </div>
-                                </div><div class="row">
-                                    <div class="col-md-4">
-                                        <div class="image-wrap-2">
-                                            <div class="image-info">
-                                              <h2 class="mb-3">Catálogo 10</h2>
-                                              <a href="{% static 'single.html'%}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
-                                            </div>
-                                            <img src="{% static 'images/i_1.jpg'%}" alt="Image" class="img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="image-wrap-2">
-                                            <div class="image-info">
-                                              <h2 class="mb-3">Catálogo 11</h2>
-                                              <a href="{% static 'single.html'%}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
-                                            </div>
-                                            <img src="{% static 'images/i_2.jpg'%}" alt="Image" class="img-fluid">
-                                        </div>
-                                    </div>
-                                <div class="col-md-4">
-                                        <div class="image-wrap-2">
-                                            <div class="image-info">
-                                              <h2 class="mb-3">Catálogo 12</h2>
-                                              <a href="{% static 'single.html'%}" class="btn btn-outline-white py-2 px-4">Ver Productos</a>
-                                            </div>
-                                            <img src="{% static 'images/i_3.jpg'%}" alt="Image" class="img-fluid">
-                                        </div>
-                                    </div>
+                               {% for catalog in object_list %}
+                                            {% if catalog.id >= 7 %}
+                                                <div class="col-lg-4">
+                                                   <div class="image-wrap-2">
+                                                        <div class="image-info">
+                                                              <h2 class="mb-3">Catálogo {{ catalog.id}}</h2>
+                                                               <a class="btn btn-outline-white py-2 px-4"
+                                                                  {% if user.is_authenticated %}
+                                                                  href="{% url 'catalog_products' pk=catalog.id %}"
+                                                                   {% else %}
+                                                                   href="{% url 'login' %}"
+                                                                  {% endif %} >Ver Productos  </a>
+                                                       </div>
+                                                       <img src="/media/{{ catalog.image}}" alt="Image" class="img-fluid">
+                                                   </div>
+                                                </div>
+                                             {% endif %}
+                                        {% endfor %}
                                 </div>
                                 <!--.row-->
                             </div>
