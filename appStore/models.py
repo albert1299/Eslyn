@@ -24,8 +24,13 @@ class Product(models.Model):
     description = models.CharField(max_length=300, verbose_name='Descripción', null=True, blank=True)
     image = models.ImageField(upload_to='images/productos/', verbose_name='Imagen')
     catalog = models.ForeignKey(Catalog, on_delete=models.CASCADE, verbose_name='Catálogo')
-    category = models.CharField(max_length=150, verbose_name='Categoria')
 
+    select_category = [
+        ("Dama", 'Dama'),
+        ("Caballero", 'Caballero'),
+        ("Niños", 'Niños'),
+    ]
+    category = models.CharField(verbose_name="Categoria", max_length=150, choices=select_category, default="2")
     def __str__(self):
         return self.name
 

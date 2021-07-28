@@ -43,7 +43,7 @@ class ProductForm(ModelForm):
                     'label': 'Imagenss',
                 }
             ),
-            'category': TextInput(
+            'category': Select(
                 attrs={
                     'placeholder': 'Ingrese la categoria',
                 }
