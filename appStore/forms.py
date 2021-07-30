@@ -40,7 +40,7 @@ class ProductForm(ModelForm):
             ),
             'image': FileInput(
                 attrs={
-                    'label': 'Imagenss',
+                    'label': 'Imagen',
                 }
             ),
         }
