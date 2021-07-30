@@ -1,6 +1,5 @@
 from django.urls import path
 
-from appStore.views.catalog import views
 from appStore.views.product.views import *
 from appStore.views.catalog.views import *
 from appStore.views.user.views import *

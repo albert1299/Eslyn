@@ -142,5 +142,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # Base url to serve media files
 MEDIA_URL = '/media/'
 
-
+LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '../store/'

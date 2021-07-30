@@ -6,7 +6,6 @@ from django.views.decorators.csrf import csrf_protect, csrf_exempt
 
 from appStore.models import Catalog
 
-
 def contact(request):
   return render(request,'contactos/list.html')
 

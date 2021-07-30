@@ -1,11 +1,7 @@
 {% extends 'body.html' %}
-{% block content %}
 {% load static %}
-    <head>
-  <title>Eslyn</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+{% block head %}
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" >
   <link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}">
@@ -19,12 +15,8 @@
   <link rel="stylesheet" href=" {% static 'css/aos.css' %}">
   <link rel="stylesheet" href=" {% static 'css/style.css' %}">
         <link rel="stylesheet" href=" {% static 'css/carouselss.css' %}"  id="bootstrap-css">
-
-<!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-<!------ Include the above in your HEAD tag ---------->
-</head>
-<body>
-
+{% endblock %}
+{% block content %}
 <div class="container">
             <div class="row blog">
                 <div class="col-md-12">
@@ -44,7 +36,7 @@
                                                 <div class="col-lg-4">
                                                    <div class="image-wrap-2">
                                                        <div class="image-info">
-                                                              <h2 class="mb-3">Catálogo {{ catalog.id}}</h2>
+                                                              <h2 class="mb-3">{{ catalog.name}}</h2>
                                                                <a class="btn btn-outline-white py-2 px-4"
                                                                   {% if user.is_authenticated %}
                                                                   href="{% url 'catalog_products' pk=catalog.id %}"
@@ -68,7 +60,7 @@
                                                 <div class="col-lg-4">
                                                    <div class="image-wrap-2">
                                                         <div class="image-info">
-                                                              <h2 class="mb-3">Catálogo {{ catalog.id}}</h2>
+                                                              <h2 class="mb-3">{{ catalog.name }}</h2>
                                                                <a class="btn btn-outline-white py-2 px-4"
                                                                   {% if user.is_authenticated %}
                                                                   href="{% url 'catalog_products' pk=catalog.id %}"
@@ -93,7 +85,9 @@
             </div>
 
 </div>
+{% endblock %}
 
+{% block javascript %}
 <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
   <script src="{% static 'js/jquery-migrate-3.0.1.min.js'%}"></script>
   <script src="{% static 'js/jquery-ui.js'%}"></script>
@@ -119,5 +113,4 @@
       $('#lightgallery').lightGallery();
     });
   </script>
-</body>
 {% endblock %}

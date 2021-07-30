@@ -43,11 +43,6 @@ class ProductForm(ModelForm):
                     'label': 'Imagenss',
                 }
             ),
-            'category': TextInput(
-                attrs={
-                    'placeholder': 'Ingrese la categoria',
-                }
-            ),
         }
 
 class CatalogForm(ModelForm):

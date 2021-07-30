@@ -2,13 +2,14 @@
 
 {% block columns %}
 <tr>
-    <th scope="col">Nro</th>
+    <th scope="col">Id</th>
     <th scope="col">Nombre</th>
     <th scope="col">Precio</th>
     <th scope="col">Stock</th>
     <th scope="col">Descripción</th>
     <th scope="col">Categoría</th>
     <th scope="col">Imagen</th>
+    <th scope="col">Catálogo</th>
     <th scope="col">Opciones</th>
 </tr>
 {% endblock %}
@@ -23,8 +24,12 @@
     <td>{% if product.description %} {{ product.description }} {% else %} (Sin descripción) {% endif %}</td>
     <td>{{ product.category }}</td>
     <td class="text-center"><img src="/media/{{ product.image}}" class="img-fluid d-block mx-auto"
-                                 style="width: 60px; height: 60px">
+                                 style="width: 9rem;
+                                 object-fit: contain;
+                                 border-radius: 6px;
+                                 margin-right: 20px;">
     </td>
+    <td>{{ product.catalog }}</td>
     <td class="text-center">
         <a href="{% url 'product_update' product.id %}" type="button" class="btn btn-warning btn-xs btn-flat">
             <i class="fas fa-edit"></i>

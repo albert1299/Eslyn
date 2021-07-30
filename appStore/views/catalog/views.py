@@ -18,8 +18,6 @@ class CatalogListView(ListView):
         context = super().get_context_data(**kwargs)
         context['create_url'] = reverse_lazy('catalog_create')
         return context
-        print(catalog.pk)
-        return redirect('catalog_products', catalog.pk)
 
 class CatalogCreateView(CreateView):
     model = Catalog

@@ -1,13 +1,27 @@
 {% extends 'body.html' %}
 
 {%block content %}
-<div class="modal-content">
+<div style="justify-content: center; display: flex; align-items: center;">
+    <div class="card" id="current_product" style="width: 18rem; ">
+        <img id="product_image" src="/media/{{product.image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 id="product_name" class="card-title" style="font-weight: bold;">{{product.name}}</h5>
+            <p id="product_description" class="card-text">{{product.description}}</p>
+            <p id="product_category" class="card-text">{{product.category}}</p>
+            <p id="product_price" class="card-text">{{product.price}}</p>
+            <button class="btn btn-primary button">Agregar al carrito</button>
+            <button type="button" onClick="javascript:history.go(-1);" class="btn btn-secondary">Regresar</button>
+        </div>
+    </div>
+</div>
+
+<!--<div class="modal-content">
     <div class="modal-header">
         <h5 class="modal-title">
             {{title}}</h5>
 
     </div>
-    <div class="modal-body">
+    <div class="modal-body" id="current_product">
         <tr>
             <td>
                 <img src="/media/{{product.image}}" class="rounded efecto-espejo float-left img-fluid mr-5" width="600" height="400"
@@ -30,11 +44,10 @@
     </div>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-primary">Agregar al carrito</button>
+    <button class="btn btn-primary button">Agregar al carrito</button>
     <button type="button" onClick="javascript:history.go(-1);" class="btn btn-secondary"
         data-dismiss="modal">Regresar</button>
-</div>
-</div>
+</div> -->
 <style>
     .efecto-espejo {
         -webkit-box-reflect: below -260px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(255, 255, 255, 0.5)));

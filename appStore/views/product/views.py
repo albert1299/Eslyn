@@ -1,19 +1,28 @@
-from django.shortcuts import render
+from django.http.response import HttpResponse
+from django.shortcuts import redirect, render
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.http import JsonResponse
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
 
 from appStore.models import Product
 from appStore.forms import ProductForm
 
+@method_decorator(login_required, name='dispatch')
 class ProductListView(ListView):
     model = Product
     template_name = 'product/list.html'
 
+    def dispatch(self, request, *args, **kwargs):
+        if not self.request.user.is_superuser:
+            return redirect('/store')
+        else:
+            return super().dispatch(request, *args, **kwargs)
+
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs) 
         context['title'] = 'Listado de productos del catálogo'
         context['create_url'] = reverse_lazy('product_create')
         return context
